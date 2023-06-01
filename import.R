@@ -1,6 +1,6 @@
 ## Importar paquetes
-
-packages <- c("plyr", "xlsx", "FactoMineR", "factoextra", "qqman", "devtools", "tidyverse", "ggVennDiagram", "remotes")
+options(timeout = 600)
+packages <- c("plyr", "xlsx", "FactoMineR", "factoextra", "qqman", "devtools", "tidyverse", "ggVennDiagram", "remotes", "sf")
 
 install.packages(setdiff(packages, rownames(installed.packages())))  
 
