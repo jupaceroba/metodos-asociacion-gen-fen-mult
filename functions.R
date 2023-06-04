@@ -389,17 +389,3 @@ return(potencias)
 }
 
 
-Data.frame_pvalores<-function(X, G, Y, frecuencias, freq2){
-   Z=metodo(X,G,Y)$Z.score
-   matcov=metodo(X,G,Y)$m.cov
-   ET=ET_function(matcov, Z)$ET.test
-   OT=OT_function(matcov, Z)$OT.test
-
-   ET_Pval=ET_function(matcov, Z)$ET.pvalue
-   OT_Pval=OT_function(matcov, Z)$OT.pvalue
-   AT_Pval_min=AT_function(ET, OT)$AT.pvalue
-   AT_Pval_min2=AT_function2(ET, OT, frecuencias)$AT.pvalue
-   AT_Pval_min3=AT_function3(ET, OT, freq2)$AT.pvalue
-   result=tibble(snp=colnames(G),ET_Pval,OT_Pval,AT_Pval_min,AT_Pval_min2,AT_Pval_min3)
-   return(result)
-}
